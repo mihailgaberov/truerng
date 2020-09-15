@@ -6,4 +6,11 @@ fs.readFile('./random.bin', (err, data) => {
 
     let json = JSON.stringify(data);
     console.log(json);
+
+  fs.writeFile('random-numbers.txt', json, function (err) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log('JSON data > random-numbers.txt');
+  });
 });

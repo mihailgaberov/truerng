@@ -16,7 +16,9 @@ import time
 from serial.tools import list_ports
 
 # Size of block for each loop
-blocksize = 102400
+# blocksize = 102400
+# blocksize = 1024
+blocksize = 512
 
 # Number of loops
 numloops = 10
