@@ -34,13 +34,13 @@ print('==================================================')
 ports = dict()
 
 # Call list_ports to get com port info
-ports_avaiable = list(list_ports.comports())
+ports_available = list(list_ports.comports())
 
 # Set default of None for com port
 rng_com_port = None
 
 # Loop on all available ports to find TrueRNG
-for temp in ports_avaiable:
+for temp in ports_available:
     if temp[1].startswith("TrueRNG"):
         print('Found: ' + str(temp))
     if rng_com_port == None:  # always chooses the 1st TrueRNG found
