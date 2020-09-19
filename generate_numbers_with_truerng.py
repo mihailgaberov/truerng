@@ -19,10 +19,10 @@ from serial.tools import list_ports
 # blocksize = 102400
 # blocksize = 1024
 # blocksize = 512
-blocksize = 8
+blocksize = 25
 
 # Number of loops
-numloops = 10
+numloops = 3
 debugloops = 5
 
 # Print our header
@@ -143,8 +143,10 @@ for _ in range(numloops):
     # Try to read the port and record the time before and after
     try:
         before = time.time()  # in microseconds
+        print('>>> before:', before)
         x = ser.read(blocksize)  # read bytes from serial port
         after = time.time()  # in microseconds
+        print('>>> after:', after)
     except:
         print('Read Failed!!!')
         break
