@@ -18,11 +18,10 @@ from serial.tools import list_ports
 # Size of block for each loop
 # blocksize = 102400
 # blocksize = 1024
-# blocksize = 512
-blocksize = 25
+blocksize = 512
 
 # Number of loops
-numloops = 3
+numloops = 10
 debugloops = 5
 
 # Print our header
