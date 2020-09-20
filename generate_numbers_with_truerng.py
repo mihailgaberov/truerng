@@ -105,7 +105,6 @@ print("_____ _____\n")
 for _ in range(debugloops):
     try:
         returnline = ser.readline()  # Read a Line from the TrueRNGpro
-        print(returnline)  # Print the result to the console
     except:
         print('Read Failed!!!')
     break
@@ -143,10 +142,8 @@ for _ in range(numloops):
     # Try to read the port and record the time before and after
     try:
         before = time.time()  # in microseconds
-        print('>>> before:', before)
         x = ser.read(blocksize)  # read bytes from serial port
         after = time.time()  # in microseconds
-        print('>>> after:', after)
     except:
         print('Read Failed!!!')
         break
