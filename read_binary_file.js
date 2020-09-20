@@ -8,7 +8,7 @@ fs.readFile('./random.bin', (err, data) => {
         .filter(num => num <= 75 && num > 0);
     const only75UniqueNumbers = new Set(allNumbersInRange75);
 
-    fs.writeFile('random-numbers.txt', Array.commfrom(only75UniqueNumbers), function(err) {
+    fs.writeFile('random-numbers.txt', Array.from(only75UniqueNumbers), function(err) {
         if (err) {
             return console.log(err);
         }
