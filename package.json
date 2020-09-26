@@ -1,0 +1,20 @@
+{
+  "name": "truerng",
+  "version": "1.0.0",
+  "description": "Experimenting with TrueRNG ubld.it/truerng_v3",
+  "main": "read_binary_file.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mihailgaberov/truerng.git"
+  },
+  "author": "Mihail Gaberov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mihailgaberov/truerng/issues"
+  },
+  "homepage": "https://github.com/mihailgaberov/truerng#readme",
+  "dependencies": {}
+}

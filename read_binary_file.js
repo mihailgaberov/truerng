@@ -1,4 +1,4 @@
-const fs = require('fs')
+/* const fs = require('fs')
 
 fs.readFile('./random.bin', (err, data) => {
     if (err) throw err;
@@ -14,4 +14,20 @@ fs.readFile('./random.bin', (err, data) => {
         }
         console.log('Stored data > random-numbers.txt');
     });
-});
+}); */
+
+async function getData(url = '') {
+    // Default options are marked with *
+    const response = await fetch(url, {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin'
+    });
+    return response;
+}
+
+getData('./generate_numbers_with_truerng.py')
+    .then(data => {
+        console.log('>>>', JSON.stringify(data));
+    });
