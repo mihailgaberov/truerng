@@ -1,8 +1,7 @@
 const SerialPort = require('serialport')
 const Readline = require('@serialport/parser-readline')
 
-
-SerialPort.list().then(data => console.log('Available ports: ', data))
+// SerialPort.list().then(data => console.log('Available ports: ', data))
 
 const serialPort = new SerialPort('COM6', { autoOpen: false })
 
@@ -17,22 +16,24 @@ serialPort.open((err) => {
     serialPort.update({ baudRate: 300 })
 
     console.log('Baud rate after update: ', serialPort.baudRate)
-    console.log('Binding object: ', serialPort.binding)
-    console.log('Is open: ', serialPort.isOpen)
-    console.log('Path: ', serialPort.path)
+    // console.log('Binding object: ', serialPort.binding)
+    // console.log('************ Setting encoding to UTF-8')
 })
 
 
 // Read data that is available but keep the stream in "paused mode"
-/* serialPort.on('readable', function () {
-    console.log('Data:', serialPort.read())
+serialPort.on('readable', function () {
+    serialPort.read(512)
 })
- */
+
 // Switches the port into "flowing mode"
 serialPort.on('data', function (data) {
-    console.log('Data:', data)
+    console.log('Data:', JSON.stringify(data))
 })
 
 // Pipe the data into another stream (like a parser or standard out)
-const lineStream = serialPort.pipe(new Readline())
-lineStream.on('data', console.log)
+// const parser = serialPort.pipe(new Readline())
+
+// parser.on('data', (data) => {
+//     console.log(JSON.stringify(data))
+// })
