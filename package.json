@@ -16,5 +16,7 @@
     "url": "https://github.com/mihailgaberov/truerng/issues"
   },
   "homepage": "https://github.com/mihailgaberov/truerng#readme",
-  "dependencies": {}
+  "dependencies": {
+    "serialport": "^9.0.1"
+  }
 }
