@@ -35,12 +35,12 @@ SerialPort.list().then(data => {
 
     let arrNumbers = [];
 
-// Switches the port into "flowing mode"
-serialPort.on('data', function (receivedData) {
-    if (arrNumbers.length === 0) {
-        // console.log('================== Data:', JSON.stringify(receivedData))
-        arrNumbers = JSON.parse(JSON.stringify(receivedData)).data;
-        console.log('>>>> nums: ', arrNumbers);
-    }
-})
+    // Switches the port into "flowing mode"
+    serialPort.on('data', function (receivedData) {
+        if (arrNumbers.length === 0) {
+            // console.log('================== Data:', JSON.stringify(receivedData))
+            arrNumbers = JSON.parse(JSON.stringify(receivedData)).data;
+            console.log('>>>> nums: ', arrNumbers);
+        }
+    })
 });
